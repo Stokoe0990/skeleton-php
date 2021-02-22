@@ -5,15 +5,10 @@ namespace Spatie\Skeleton;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Spatie\Skeleton\SkeletonClass
+ * @see \Spatie\Skeleton\Skeleton
  */
 class SkeletonFacade extends Facade
 {
-    /**
-     * Get the registered name of the component.
-     *
-     * @return string
-     */
     protected static function getFacadeAccessor()
     {
         return 'skeleton';

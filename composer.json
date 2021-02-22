@@ -1,30 +1,34 @@
 {
-    "name": "spatie/:package_name",
+    "name": ":vendor_name/:package_name",
     "description": ":package_description",
     "keywords": [
-        "spatie",
+        ":vendor_name",
         ":package_name"
     ],
-    "homepage": "https://github.com/spatie/:package_name",
+    "homepage": "https://github.com/:vendor_name/:package_name",
     "license": "MIT",
     "authors": [
         {
             "name": ":author_name",
             "email": ":author_email",
-            "homepage": "https://spatie.be",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^7.3"
+        "php": "^7.4|^8.0",
+        "spatie/laravel-package-tools": "^1.1",
+        "illuminate/contracts": "^8.0"
     },
     "require-dev": {
-        "larapack/dd": "^1.0",
-        "phpunit/phpunit": "^8.2"
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.3",
+        "spatie/laravel-ray": "^1.9",
+        "vimeo/psalm": "^4.4"
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Skeleton\\": "src"
+            "Spatie\\Skeleton\\": "src",
+            "Spatie\\Skeleton\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
@@ -33,9 +37,9 @@
         }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit",
+        "psalm": "vendor/bin/psalm",
+        "test": "vendor/bin/phpunit --colors=always",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
-
     },
     "config": {
         "sort-packages": true
@@ -49,5 +53,7 @@
                 "Skeleton": "Spatie\\Skeleton\\SkeletonFacade"
             }
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
